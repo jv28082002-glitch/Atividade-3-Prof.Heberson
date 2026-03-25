@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+     <div class="primeiro">
+            
+          <h1>Atividade n3</h1>
+          <img src="like.jpg" alt="">
+
+     </div>
+
+    <div class="primeiro">
+
+    <h2>Codigo Python</h2>
+    <img src="Python.jpg" alt="">
+
+    </div>
+
+    <pre>
+        # Função para validar nota
+def pedir_nota(tipo):
+    while True:
+        try:
+            nota = float(input(f"Nota da {tipo} (0 a 10): "))
+            if 0 <= nota <= 10:
+                return nota
+            else:
+                print("⚠️ Digite uma nota entre 0 e 10!")
+        except ValueError:
+            print("⚠️ Digite um número válido!")
+
+# Lista de matérias
+materias = ["Matemática", "Linguagens", "Ciências Humanas", "Ciências da Natureza"]
+
+# Dicionário para guardar todas as notas
+notas = {materia: [] for materia in materias}
+
+# Loop pelos 4 bimestres
+for bimestre in range(1, 5):
+    print(f"\n===== {bimestre}º BIMESTRE =====")
+
+    for materia in materias:
+        print(f"\n{materia}:")
+
+        n1 = pedir_nota("atividade")
+        n2 = pedir_nota("simulado")
+        n3 = pedir_nota("prova")
+
+        media_bimestre = (n1 + n2 + n3) / 3
+        notas[materia].append(media_bimestre)
+
+        print(f"Média do bimestre: {media_bimestre:.2f}")
+
+# Cálculo das médias anuais
+print("\n===== MÉDIA ANUAL =====")
+aprovado = True
+
+for materia in materias:
+    media_anual = sum(notas[materia]) / 4
+    print(f"{materia}: {media_anual:.2f}")
+
+    if media_anual < 6:
+        aprovado = False
+
+# Resultado final
+print("\n===== RESULTADO FINAL =====")
+
+if aprovado:
+    print("✅ Você foi APROVADO em todas as matérias!")
+else:
+    print("❌ Você foi REPROVADO (tem matéria abaixo de 6).")
+    </pre>
+
+    <p>
+        Esse programa em Python foi criado para calcular a média anual de um aluno em quatro matérias: Matemática, Linguagens, Ciências Humanas e Ciências da Natureza. Ele funciona pedindo as notas de cada bimestre (atividade, simulado e prova), calculando a média de cada bimestre e armazenando esses valores.
+
+Para garantir que não haja erros, o código possui uma função que valida as notas, permitindo apenas valores entre 0 e 10. Depois de coletar todos os dados dos quatro bimestres, o programa calcula a média anual de cada matéria.
+
+Por fim, ele verifica se todas as médias são maiores ou iguais a 6. Caso sejam, o aluno é considerado aprovado; se alguma estiver abaixo de 6, o aluno é reprovado.
+    </p>
+
+</body>
+</html>

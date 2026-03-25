@@ -1,0 +1,41 @@
+.primeiro{
+    text-align: center;
+}
+
+body{
+    background-color: black;
+}
+
+p{
+    font-size: x-large;
+    text-align: left;
+    color: aliceblue;
+}
+
+h3{
+    text-align: center;
+    font-size: x-large;
+    color: blueviolet;
+}
+
+*{
+    margin: 1rem;
+    text-indent: 30px;
+}
+
+h2{
+    font-size: xx-large;
+    color: darkmagenta;
+
+}
+
+h1{
+    color: chartreuse;
+    font-size: 50px;
+}
+
+pre{
+    font-size: x-large;
+    text-align: left;
+    color: aliceblue;
+}
